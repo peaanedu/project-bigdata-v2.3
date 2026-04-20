@@ -105,11 +105,11 @@ services:
 #      timeout: 10s
 #      retries: 15
     healthcheck:
-      test: ["CMD", "bash", "-c", "hdfs dfsadmin -report"]
+      test: ["CMD-SHELL", "hdfs dfsadmin -report >/dev/null 2>&1 || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 10
-      start_period: 60s
+      start_period: 90s  
 
   datanode1:
     <<: *hadoop-common
