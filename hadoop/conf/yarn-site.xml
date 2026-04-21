@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <configuration>
+
   <property>
     <name>yarn.resourcemanager.hostname</name>
     <value>resourcemanager</value>
@@ -49,4 +50,11 @@
     <name>yarn.log.server.url</name>
     <value>http://historyserver:8188/applicationhistory/logs/</value>
   </property>
+
+  <!-- 🔥 CRITICAL FIX -->
+  <property>
+    <name>yarn.resourcemanager.scheduler.class</name>
+    <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fifo.FifoScheduler</value>
+  </property>
+
 </configuration>
